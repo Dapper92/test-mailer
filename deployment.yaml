@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-mailer
+  namespace: argocd
+spec:
+  selector:
+    matchLabels:
+      app: test_mailer
+  template:
+    metadata:
+      labels:
+        app: test_mailer
+    spec:
+      containers:
+        - name: "test_mailer"
+          image: dapper01/practice-image:1  
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+          - containerPort: 80
