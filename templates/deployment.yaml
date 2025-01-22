@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: "test_mailer"
-          image: dapper01/practice-image:3
+          image: dapper01/practice-image:4
           imagePullPolicy: Always
           resources:
             limits:
